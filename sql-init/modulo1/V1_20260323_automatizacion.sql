@@ -10,7 +10,7 @@ RETURNS TRIGGER AS $$
 BEGIN
     UPDATE pizarras
     SET estado = 'En Reparación'
-    WHERE id_pizarra = NEW.id_pizarra;
+    WHERE id_pizarra_pk = NEW.id_pizarra_fk;
 
     RETURN NEW;
 END;
