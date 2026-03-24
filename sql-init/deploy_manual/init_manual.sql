@@ -1,8 +1,11 @@
 \echo '============================================================'
-\echo 'Iniciando proceso de despliegue de la db del'
-\echo 'Sistema de Reporte de Fallos en Pizarras Electrónicas'
+\echo 'Iniciando proceso de despliegue de la db de manera manual'
+\echo 'del Sistema de Reporte de Fallos en Pizarras Electrónicas'
 \echo '============================================================'
 \echo ' '
+
+\i /docker-entrypoint-initdb.d/deploy_manual/20260323_variables.sql
+\i /docker-entrypoint-initdb.d/deploy_manual/20260323_create_database.sql
 
 \set ON_ERROR_STOP on
 
