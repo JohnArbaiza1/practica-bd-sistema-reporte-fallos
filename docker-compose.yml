@@ -14,7 +14,7 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: admin123
-      POSTGRES_DB: midb
+      POSTGRES_DB: db_sistema_reporte
     # volumen para persistir los datos de postgres
     volumes:
       - pgdata:/var/lib/postgresql/data
