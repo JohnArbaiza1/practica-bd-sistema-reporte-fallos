@@ -18,3 +18,6 @@
 -- Scripts correspondientes al modulo 3 y 4
 \i /docker-entrypoint-initdb.d/modulo3_4/V1_20260324_mantenimiento.sql
 \i /docker-entrypoint-initdb.d/modulo3_4/V1_20260324_metadatos_catalogo.sql
+
+-- Datos de prueba
+\i /docker-entrypoint-initdb.d/test/V1_20260324_datos_prueba.sql

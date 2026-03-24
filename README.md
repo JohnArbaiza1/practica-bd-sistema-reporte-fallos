@@ -14,6 +14,45 @@ dicha practica consiste en la implementación de un sistema robusto para la gest
 - `modulo2/`: scripts módulo 2 (alter, índices)
 - `modulo3_4/`: scripts módulo 3 y 4 (mantenimiento, metadatos)
 
+## 📜 Estructura de Scripts SQL
+
+### Raíz: `sql-init/`
+
+| Archivo | Descripción |
+|---------|-------------|
+| `main.sql` | Script principal de despliegue automático. Orquesta la ejecución de todos los módulos en orden correcto para crear la estructura de la BD de forma automática. |
+
+### `deploy_manual/` — Despliegue Manual
+
+| Archivo | Descripción |
+|---------|-------------|
+| `20260323_variables.sql` | Define variables globales: nombre de BD (`db_reportes`), usuario propietario, schema y versión. Se utiliza en despliegues manuales. |
+| `20260323_create_database.sql` | Crea la base de datos `db_reportes` usando la variable definida en `20260323_variables.sql`. |
+| `init_manual.sql` | Orquesta el despliegue manual. Carga variables, crea BD y ejecuta todos los módulos en secuencia para crear una instancia completa de forma manual. |
+
+### `modulo1/` — Datos, Integridad y Automatización
+
+| Archivo | Descripción |
+|---------|-------------|
+| `V2_20260323_schema_tables.sql` | **Creación del esquema:** Define todas las tablas con sus columnas y tipos de datos. Es la base de toda la estructura. |
+| `V1_20260323_integridad_referencial.sql` | **Integridad referencial:** Establece relaciones (FOREIGN KEYs) y restricciones (CASCADE, SET NULL) entre tablas para garantizar consistencia de datos. |
+| `V1_20260323_automatizacion.sql` | **Automatización con Triggers:** Implementa funciones PL/pgSQL y triggers para automatizar comportamientos (ej: actualizar estado de pizarra al registrar un fallo). |
+
+### `modulo2/` — Optimización y Alteraciones
+
+| Archivo | Descripción |
+|---------|-------------|
+| `V1_20260324_alter_table.sql` | **Modificaciones de tablas:** Agrega nuevas columnas y restricciones (CHECK) a tablas existentes para ampliar funcionalidad. |
+| `V1_20260324_indices.sql` | **Índices para optimización:** Crea índices en columnas frecuentemente consultadas (`fecha`, `id_tecnico_fk`) para mejorar rendimiento de búsquedas y filtrados. |
+
+### `modulo3_4/` — Mantenimiento y Documentación
+
+| Archivo | Descripción |
+|---------|-------------|
+| `V1_20260324_mantenimiento.sql` | **Mantenimiento de BD:** Ejecuta `VACUUM ANALYZE` en tablas críticas para limpiar datos huérfanos y actualizar estadísticas del optimizador de consultas. |
+| `V1_20260324_metadatos_catalogo.sql` | **Documentación y metadatos:** Añade comentarios (COMMENT) a tablas y columnas para auto-documentar la estructura y facilitar comprensión del esquema. |
+
+---
 
 ## 🚀 Requisitos previos
 
@@ -93,7 +132,9 @@ sudo docker exec -it practica_evaluada_db psql -U postgres -f /docker-entrypoint
 
 > ⚠️ Si deseas volver a crearla desde cero, primero elimínala con:
 > ```bash
+> # Para Windows
 > docker exec -it practica_evaluada_db psql -U postgres -c "DROP DATABASE IF EXISTS db_reportes;"
+> # Para Linux
 > sudo docker exec -it practica_evaluada_db psql -U postgres -c "DROP DATABASE IF EXISTS db_reportes;"
 > ```
 
