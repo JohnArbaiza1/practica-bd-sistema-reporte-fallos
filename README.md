@@ -120,6 +120,15 @@ Este proyecto maneja dos bases de datos:
 ### `db_sistema_reporte` — Automática
 Se crea automáticamente al levantar los contenedores con toda la estructura del sistema. No requiere ningún paso adicional.
 
+Este comando es para poder conectarse a la base de datos que se crea de manera automatica
+```bash
+# Para Windows
+docker exec -it practica_evaluada_db psql -U postgres -d db_sistema_reporte
+
+# Para Linux
+sudo docker exec -it practica_evaluada_db psql -U postgres -d db_sistema_reporte
+```
+
 ### `db_reportes` — Manual
 Es una base de datos adicional para pruebas o despliegue independiente. Para crearla, ejecuta el siguiente comando una vez que los contenedores estén corriendo:
 ```bash
