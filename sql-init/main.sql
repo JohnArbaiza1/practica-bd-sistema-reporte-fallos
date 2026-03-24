@@ -17,3 +17,6 @@
 -- Scripts correspondientes al modulo 2
 \i /docker-entrypoint-initdb.d/modulo2/V1_20260324_alter_table.sql
 \i /docker-entrypoint-initdb.d/modulo2/V1_20260324_indices.sql
+
+-- Scripts correspondientes al modulo 3
+\i /docker-entrypoint-initdb.d/modulo3/V1_20260324_mantenimiento.sql

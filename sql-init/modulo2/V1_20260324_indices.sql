@@ -22,5 +22,10 @@ CREATE INDEX idx_identificador_tecnico_asignado ON reportes_fallos(id_tecnico_fk
 \echo 'Sin embargo, cada índice adicional aumenta el costo en INSERT, UPDATE y DELETE,'
 \echo 'ya que deben actualizarse al modificar los datos. Por eso se debe equilibrar'
 \echo 'el rendimiento de lectura con el impacto en las escrituras.'
+\echo ' '
+
+\echo 'Por eso, considero que es importante encontrar un equilibrio: usar índices para'
+\echo 'mejorar la velocidad de lectura, pero sin afectar demasiado el rendimiento en'
+\echo 'las operaciones de escritura.'
 \echo '----------------------------------------------------------------------'
 \echo ' '
