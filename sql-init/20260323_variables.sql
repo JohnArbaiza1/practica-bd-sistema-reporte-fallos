@@ -15,3 +15,4 @@
 \echo '  Schema        : ' :schema_name
 \echo '  Versión       : ' :app_version
 \echo '------------------------------------------------------------'
+\echo ' '

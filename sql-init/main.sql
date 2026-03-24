@@ -8,6 +8,8 @@
 
 \i /docker-entrypoint-initdb.d/20260323_variables.sql
 \i /docker-entrypoint-initdb.d/20260323_create_database.sql
-\i /docker-entrypoint-initdb.d/V1_20260323_schema_tables.sql
-\i /docker-entrypoint-initdb.d/V1_20260323_integridad_referencial.sql
-\i /docker-entrypoint-initdb.d/V1_20260323_automatizacion.sql
+
+-- Scripts correspondientes al modulo 1
+\i /docker-entrypoint-initdb.d/modulo1/V2_20260323_schema_tables.sql
+\i /docker-entrypoint-initdb.d/modulo1/V1_20260323_integridad_referencial.sql
+\i /docker-entrypoint-initdb.d/modulo1/V1_20260323_automatizacion.sql
