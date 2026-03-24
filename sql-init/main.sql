@@ -13,3 +13,7 @@
 \i /docker-entrypoint-initdb.d/modulo1/V2_20260323_schema_tables.sql
 \i /docker-entrypoint-initdb.d/modulo1/V1_20260323_integridad_referencial.sql
 \i /docker-entrypoint-initdb.d/modulo1/V1_20260323_automatizacion.sql
+
+-- Scripts correspondientes al modulo 2
+\i /docker-entrypoint-initdb.d/modulo2/V1_20260324_alter_table.sql
+\i /docker-entrypoint-initdb.d/modulo2/V1_20260324_indices.sql
